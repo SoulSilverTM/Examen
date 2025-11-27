@@ -36,16 +36,21 @@ function DashboardApp() {
       setCurrentUser(user);
     }, []);
 
+    React.useEffect(() => {
+      const isDark = localStorage.getItem('theme') === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+    }, []);
+
     if (!currentUser) return null;
 
     return (
-      <div className="min-h-screen bg-gray-50" data-name="dashboard-app" data-file="dashboard-app.js">
-        <Topbar user={currentUser} />
-        <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors" data-name="dashboard-app" data-file="dashboard-app.js">
+        <Topbar user={currentUser} onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} currentPage="inicio" />
         
         <div className={`transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-0'} pt-16`}>
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in">Dashboard</h1>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
               <StatsCard title="Total Usuarios" value="1,245" icon="users" color="blue" trend="+12%" />

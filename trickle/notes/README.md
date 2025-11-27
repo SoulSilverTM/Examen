@@ -29,7 +29,9 @@ Sistema completo de gestión con autenticación, roles de usuario y dashboard in
 ## Estructura
 
 - `index.html` - Página de login
-- `dashboard.html` - Dashboard principal
+- `dashboard.html` - Dashboard principal con estadísticas
+- `usuarios.html` - Gestión de usuarios con tabla
+- `perfil.html` - Perfil detallado del usuario
 - `components/` - Componentes React reutilizables
 - `utils/auth.js` - Lógica de autenticación
 

@@ -62,8 +62,8 @@ function ChartCard({ title, type }) {
     };
 
     return (
-      <div className="card" data-name="chart-card" data-file="components/ChartCard.js">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">{title}</h3>
+      <div className="card dark:bg-gray-800" data-name="chart-card" data-file="components/ChartCard.js">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{title}</h3>
         <div style={{ height: '250px' }}>
           <canvas ref={chartRef}></canvas>
         </div>

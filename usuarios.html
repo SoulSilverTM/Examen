@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sistema de Gestión</title>
-    <meta name="description" content="Dashboard del sistema de gestión">
-    <meta name="keywords" content="dashboard, analytics, gestión">
+    <title>Usuarios - Sistema de Gestión</title>
+    <meta name="description" content="Gestión de usuarios del sistema">
+    <meta name="keywords" content="usuarios, gestión, administración">
 
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -16,7 +16,6 @@
         darkMode: 'class'
       }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
     <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
     <link href="styles/global.css" rel="stylesheet">
 
@@ -28,7 +27,6 @@
             --accent-color: #1e40af;
             --text-primary: #1e293b;
             --text-secondary: #64748b;
-            --sidebar-width: 256px;
         }
     }
 
@@ -53,9 +51,7 @@
     <div id="root"></div>
     <script type="text/babel" src="components/Topbar.js"></script>
     <script type="text/babel" src="components/Sidebar.js"></script>
-    <script type="text/babel" src="components/StatsCard.js"></script>
-    <script type="text/babel" src="components/ChartCard.js"></script>
     <script type="text/babel" src="utils/auth.js"></script>
-    <script type="text/babel" src="dashboard-app.js"></script>
+    <script type="text/babel" src="usuarios-app.js"></script>
 </body>
 </html>

@@ -57,7 +57,7 @@ function App() {
 
     return (
       <div className="min-h-screen flex items-center justify-center p-4" data-name="app" data-file="app.js">
-        <div className="glass-card rounded-2xl p-8 w-full max-w-md">
+        <div className="glass-card rounded-2xl p-8 w-full max-w-md animate-fade-in">
           <div className="text-center mb-8">
             <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
               <div className="icon-shield-check text-4xl text-white"></div>

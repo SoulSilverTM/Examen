@@ -1,25 +1,30 @@
-function Sidebar({ isOpen, onToggle }) {
+function Sidebar({ isOpen, onToggle, currentPage = 'inicio' }) {
   try {
-    const [activeMenu, setActiveMenu] = React.useState('inicio');
-
     const menuItems = [
-      { id: 'inicio', label: 'Inicio', icon: 'home' },
-      { id: 'usuarios', label: 'Usuarios', icon: 'users' },
-      { id: 'configuracion', label: 'Configuración', icon: 'settings' }
+      { id: 'inicio', label: 'Inicio', icon: 'home', url: 'dashboard.html' },
+      { id: 'usuarios', label: 'Usuarios', icon: 'users', url: 'usuarios.html' },
+      { id: 'perfil', label: 'Perfil', icon: 'user-circle', url: 'perfil.html' },
+      { id: 'configuracion', label: 'Configuración', icon: 'settings', url: '#' }
     ];
 
+    const handleNavigation = (url) => {
+      if (url && url !== '#') {
+        window.location.href = url;
+      }
+    };
+
     return (
-      <div className={`fixed left-0 top-16 bottom-0 bg-white border-r border-gray-200 transition-all duration-300 ${isOpen ? 'w-64' : 'w-0'} overflow-hidden`} data-name="sidebar" data-file="components/Sidebar.js">
+      <div className={`fixed left-0 top-16 bottom-0 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 ${isOpen ? 'w-64' : 'w-0'} overflow-hidden z-40`} data-name="sidebar" data-file="components/Sidebar.js">
         <div className="p-4">
           <nav className="space-y-2">
             {menuItems.map(item => (
               <button
                 key={item.id}
-                onClick={() => setActiveMenu(item.id)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                  activeMenu === item.id 
-                    ? 'bg-blue-50 text-blue-600' 
-                    : 'text-gray-600 hover:bg-gray-50'
+                onClick={() => handleNavigation(item.url)}
+                className={`sidebar-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+                  currentPage === item.id 
+                    ? 'bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-300' 
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                 }`}
               >
                 <div className={`icon-${item.icon} text-xl`}></div>
